@@ -1,0 +1,88 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2580
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red42\green44\blue46;\red255\green255\blue255;\red0\green0\blue255;
+\red255\green255\blue254;\red0\green0\blue0;\red100\green117\blue135;\red251\green0\blue255;\red19\green118\blue70;
+}
+{\*\expandedcolortbl;;\cssrgb\c21569\c22745\c23529;\cssrgb\c100000\c100000\c100000;\cssrgb\c0\c0\c100000;
+\cssrgb\c100000\c100000\c99608;\cssrgb\c0\c0\c0;\cssrgb\c46667\c53333\c60000;\cssrgb\c100000\c0\c100000;\cssrgb\c3529\c52549\c34510;
+}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 1. Pull a list of customer ids with the customer\'92s full name, and address, along with combining their city and country together. Be sure to make a space in between these two and make it UPPER CASE. (e.g. LOS ANGELES USA)
+\f1 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f0 \cf4 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Select\cf6 \strokec6  \cb1 \
+\pard\pardeftab720\sl360\partightenfactor0
+\cf6 \cb5 CustomerId,\cb1 \
+\cb5 FirstName \cf7 \strokec7 ||\cf6 \strokec6  " " \cf7 \strokec7 ||\cf6 \strokec6  LastName \cf4 \strokec4 As\cf6 \strokec6  FullName,\cb1 \
+\pard\pardeftab720\sl360\partightenfactor0
+\cf4 \cb5 \strokec4 Address\cf6 \strokec6 ,\cb1 \
+\pard\pardeftab720\sl360\partightenfactor0
+\cf8 \cb5 \strokec8 Upper\cf6 \strokec6 (City \cf7 \strokec7 ||\cf6 \strokec6  " " \cf7 \strokec7 ||\cf6 \strokec6  Country) \cf4 \strokec4 As\cf6 \strokec6  CityCountry\cb1 \
+\pard\pardeftab720\sl360\partightenfactor0
+\cf4 \cb5 \strokec4 From\cf6 \strokec6  Customers\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \strokec2 2. Create a new employee user id by combining the first 4 letters of the employee\'92s first name with the first 2 letters of the employee\'92s last name. Make the new field lower case and pull each individual step to show your work.\
+\pard\pardeftab720\sl360\partightenfactor0
+\cf4 \cb5 \strokec4 Select\cf6 \strokec6  \cb1 \
+\pard\pardeftab720\sl360\partightenfactor0
+\cf6 \cb5 FirstName,\cb1 \
+\cb5 LastName,\cb1 \
+\pard\pardeftab720\sl360\partightenfactor0
+\cf8 \cb5 \strokec8 Lower\cf6 \strokec6 (Substr(FirstName, \cf9 \strokec9 1\cf6 \strokec6 , \cf9 \strokec9 4\cf6 \strokec6 )) \cf4 \strokec4 As\cf6 \strokec6  First4Letter,\cb1 \
+\cf8 \cb5 \strokec8 Lower\cf6 \strokec6 (Substr(LastName, \cf9 \strokec9 1\cf6 \strokec6 , \cf9 \strokec9 2\cf6 \strokec6 )) \cf4 \strokec4 As\cf6 \strokec6  First2Letter,\cb1 \
+\cf8 \cb5 \strokec8 Lower\cf6 \strokec6 (Substr(FirstName, \cf9 \strokec9 1\cf6 \strokec6 , \cf9 \strokec9 4\cf6 \strokec6 ) \cf7 \strokec7 ||\cf6 \strokec6  Substr(LastName, \cf9 \strokec9 1\cf6 \strokec6 , \cf9 \strokec9 2\cf6 \strokec6 )) \cf4 \strokec4 As\cf6 \strokec6  UserId\cb1 \
+\pard\pardeftab720\sl360\partightenfactor0
+\cf4 \cb5 \strokec4 From\cf6 \strokec6  Employees\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \strokec2 3. Show a list of employees who have worked for the company for 15 or more years using the current date function. Sort by lastname ascending.\
+\
+\pard\pardeftab720\sl360\partightenfactor0
+\cf4 \cb5 \strokec4 Select\cf6 \strokec6  \cb1 \
+\pard\pardeftab720\sl360\partightenfactor0
+\cf6 \cb5 LastName,\cb1 \
+\cb5 HireDate,\cb1 \
+\pard\pardeftab720\sl360\partightenfactor0
+\cf4 \cb5 \strokec4 Date\cf6 \strokec6 ("now") \cf7 \strokec7 -\cf6 \strokec6  HireDate \cf4 \strokec4 as\cf6 \strokec6  YearsWorked\cb1 \
+\cf4 \cb5 \strokec4 From\cf6 \strokec6  Employees\cb1 \
+\cf4 \cb5 \strokec4 Where\cf6 \strokec6  YearsWorked \cf7 \strokec7 >=\cf6 \strokec6  \cf9 \strokec9 15\cf6 \cb1 \strokec6 \
+\cf4 \cb5 \strokec4 Order\cf6 \strokec6  \cf4 \strokec4 By\cf6 \strokec6  LastName \cf4 \strokec4 Asc\
+\
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \strokec2 4. Profiling the Customers table, answer the following question.\
+\pard\pardeftab720\sl360\partightenfactor0
+\cf4 \cb5 \strokec4 Select\cf6 \strokec6  \cf7 \strokec7 *\cf6 \strokec6  \cb1 \
+\cf4 \cb5 \strokec4 From\cf6 \strokec6  Customers\cb1 \
+\cf4 \cb5 \strokec4 Where\cf6 \strokec6  Company \cf7 \strokec7 Is\cf6 \strokec6  \cf7 \strokec7 Null\cf6 \strokec6 ;\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \strokec2 5.Find the cities with the most customers and rank in descending order.\cf6 \cb1 \strokec6 \
+\pard\pardeftab720\sl360\partightenfactor0
+\cf4 \cb5 \strokec4 Select\cf6 \strokec6  City, \cf8 \strokec8 Count\cf6 \strokec6 (\cf7 \strokec7 *\cf6 \strokec6 ) \cf4 \strokec4 as\cf6 \strokec6  C\cb1 \
+\cf4 \cb5 \strokec4 From\cf6 \strokec6  Customers\cb1 \
+\cf4 \cb5 \strokec4 Group\cf6 \strokec6  \cf4 \strokec4 by\cf6 \strokec6  City\cb1 \
+\cf4 \cb5 \strokec4 Order\cf6 \strokec6  \cf4 \strokec4 By\cf6 \strokec6  C \cf4 \strokec4 Desc\cf6 \cb1 \strokec6 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \strokec2 6. Create a new customer invoice id by combining a customer\'92s invoice id with their first and last name while ordering your query in the following order: firstname, lastname, and invoiceID.\
+\pard\pardeftab720\sl360\partightenfactor0
+\cf4 \cb5 \strokec4 Select\cf6 \strokec6  \cb1 \
+\pard\pardeftab720\sl360\partightenfactor0
+\cf6 \cb5 C.FirstName,\cb1 \
+\cb5 C.LastName,\cb1 \
+\cb5 C.FirstName \cf7 \strokec7 ||\cf6 \strokec6  C.LastName \cf7 \strokec7 ||\cf6 \strokec6  I.InvoiceId \cf4 \strokec4 As\cf6 \strokec6  \cf8 \strokec8 NewId\cf6 \cb1 \strokec6 \
+\pard\pardeftab720\sl360\partightenfactor0
+\cf4 \cb5 \strokec4 From\cf6 \strokec6  Customers C \cf7 \strokec7 Inner\cf6 \strokec6  \cf7 \strokec7 Join\cf6 \strokec6  Invoices I\cb1 \
+\cf4 \cb5 \strokec4 On\cf6 \strokec6  C.CustomerId \cf7 \strokec7 =\cf6 \strokec6  I.CustomerId\cb1 \
+\cf4 \cb5 \strokec4 Where\cf6 \strokec6  \cf8 \strokec8 NewId\cf6 \strokec6  \cf7 \strokec7 Like\cf6 \strokec6  "AstridGruber%"\cb1 \
+}
